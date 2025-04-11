@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios de Movilidad</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f8ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .pantalla-inicio {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .boton {
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 10px;
+      background-color: #4caf50;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .boton:hover {
+      background-color: #45a049;
+    }
+    .ejercicios {
+      display: none;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 90vw;
+      margin: auto;
+      padding: 2rem;
+      font-size: 1.4rem;
+    }
+    .ejercicio {
+      background: #fff;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .fullscreen-btn {
+      display: none;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #000;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    @media (max-width: 768px) {
+      .fullscreen-btn {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="fullscreen-btn" onclick="toggleFullscreen()">Pantalla completa</button>
+
+  <div class="pantalla-inicio" id="pantallaInicio">
+    <h1 style="font-size: 2.5rem;">Bienvenida Ximena</h1>
+    <button class="boton" onclick="mostrarEjercicios()">Comenzar</button>
+  </div>
+
+  <div class="ejercicios" id="ejercicios">
+    <!-- Ejercicio 1 -->
+    <div class="ejercicio">
+      <h2>Ejercicio 1: Estiramiento de rodilla sentado</h2>
+      <p>Siéntate en una silla con la espalda recta. Estira una pierna al frente hasta que esté recta, sostén por 5 segundos y baja lentamente. Repite con la otra pierna. Hazlo 10 veces por pierna.</p>
+    </div>
+
+    <!-- Ejercicio 2 -->
+    <div class="ejercicio">
+      <h2>Ejercicio 2: Elevación de rodilla</h2>
+      <p>Desde la misma silla, levanta una rodilla hacia el pecho lo más que puedas sin dolor. Sostén unos segundos y baja. Repite 10 veces con cada pierna.</p>
+    </div>
+
+    <!-- Ejercicio 3 -->
+    <div class="ejercicio">
+      <h2>Ejercicio 3: Marcha en el lugar</h2>
+      <p>Párate con apoyo en una pared o silla y simula una caminata sin moverte del lugar. Eleva suavemente una rodilla y luego la otra, como si marcharas. Hazlo durante 1 minuto.</p>
+    </div>
+
+    <!-- Ejercicio 4 -->
+    <div class="ejercicio">
+      <h2>Ejercicio 4: Flexión y extensión</h2>
+      <p>Sentado en una silla, flexiona lentamente la rodilla hacia atrás y luego extiéndela. Realiza el movimiento 10 veces con cada pierna.</p>
+    </div>
+
+    <!-- Ejercicio 5 -->
+    <div class="ejercicio">
+      <h2>Ejercicio 5: Subir y bajar talones</h2>
+      <p>De pie, con las manos apoyadas en una superficie firme, sube sobre la punta de los pies y luego baja lentamente los talones. Realiza este ejercicio 15 veces.</p>
+    </div>
+
+    <!-- Ejercicio 6 -->
+    <div class="ejercicio">
+      <h2>Ejercicio 6: Deslizar el pie hacia adelante</h2>
+      <p>Sentado, coloca el talón sobre el suelo y deslízalo lentamente hacia adelante y luego hacia atrás. Alterna entre ambas piernas 10 veces.</p>
+    </div>
+  </div>
+
+  <script>
+    function mostrarEjercicios() {
+      document.getElementById('pantallaInicio').style.display = 'none';
+      document.getElementById('ejercicios').style.display = 'flex';
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+  </script>
+</body>
+</html>
